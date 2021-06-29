@@ -21,19 +21,21 @@ let currentNote = {
 
 
 
-let pastNote = JSON.parse(fs.readFileSync(path.join(__dirname,"../db/db.json"),"utf-8")) 
-pastNote.push(currentNote)
-fs.writeFileSync("./db/db.json",JSON.stringify(pastNote))
-res.json(pastNote)
+let saveNote = JSON.parse(fs.readFileSync(path.join(__dirname,"../db/db.json"),"utf-8"))
+saveNote.push(currentNote)
+fs.writeFileSync("./db/db.json",JSON.stringify(saveNote))
+res.json(saveNote)
 })
 
 
-    app.delete("/api/notes/:id", (req, res) => {
-    let choice = req.params.id
-    let pastNote =JSON.parse(fs.readFileSync(path.join(__dirname,"../db/db.json"),"utf-8"))
-    const newNote =pastNote.filter(pastNote=>pastNote.id != choice)
-    fs.deleteFileSync("./db/db.json",JSON.stringify(currentNote))
-    res.send(currentNote)
+
+
+app.delete("/api/notes/:id", (req, res) => {
+let choice = req.params.id
+let saveNote =JSON.parse(fs.readFileSync(path.join(__dirname,"../db/db.json"),"utf-8"))
+const newNote =saveNote.filter(saveNote=>saveNote.id != choice)
+fs.deleteFileSync("./db/db.json",JSON.stringify(savedNote))
+res.send(newNote)
 })
 
 
