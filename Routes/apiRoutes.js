@@ -36,9 +36,7 @@ app.delete("/api/notes/:id", (req, res) => {
     fs.writeFileSync("./db/db.json",JSON.stringify(pastNote))
     res.json(pastNote)
 
-    // const newNote =pastNote.filter(pastNote=>pastNote.id != choice)
-    // fs.deleteFileSync("./db/db.json",JSON.stringify(currentNote))
-    // res.send(currentNote)
+    
 })
 
 }
