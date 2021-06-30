@@ -23,13 +23,25 @@ let pastNote = JSON.parse(fs.readFileSync(path.join(__dirname,"../db/db.json"),"
 app.delete("/api/notes/:id", (req, res) => {
     let choice = req.params.id
     let pastNote =JSON.parse(fs.readFileSync(path.join(__dirname,"../db/db.json"),"utf-8"))
-    const newNote =pastNote.filter(pastNote=>pastNote.id != choice)
-    fs.deleteFileSync("./db/db.json",JSON.stringify(currentNote))
-    res.send(currentNote)
+
+ 
+
+    pastNote.forEach((element, i) => {
+        if(element.id == choice){
+            pastNote.splice(i, 1)
+        }
+    });
+
+
+    fs.writeFileSync("./db/db.json",JSON.stringify(pastNote))
+    res.json(pastNote)
+
+    // const newNote =pastNote.filter(pastNote=>pastNote.id != choice)
+    // fs.deleteFileSync("./db/db.json",JSON.stringify(currentNote))
+    // res.send(currentNote)
 })
 
-
-  }
+}
 
 
   
