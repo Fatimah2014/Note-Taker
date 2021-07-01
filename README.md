@@ -26,7 +26,7 @@ I created an application called Note Taker that can be used to write and save no
 - THEN that note appears in the right-hand column
 - WHEN I click on the Write icon in the navigation at the top of the page
 - THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column
-```
+
 
 ---------
 # Table of Content
