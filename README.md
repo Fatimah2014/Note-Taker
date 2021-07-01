@@ -46,6 +46,7 @@ I created an application called Note Taker that can be used to write and save no
 ------
 # Installation
 To install necessary dependencies, run the following command
+localhost:3000/home
 
 ------
 ------
