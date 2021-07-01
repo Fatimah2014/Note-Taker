@@ -33,7 +33,6 @@ pastNote.forEach((element, i) => {
     fs.writeFileSync("./db/db.json",JSON.stringify(pastNote))
     res.json(pastNote)
 
-
 })
 
 }
